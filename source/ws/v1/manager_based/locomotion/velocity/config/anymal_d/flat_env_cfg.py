@@ -5,16 +5,15 @@
 
 from omni.isaac.lab.utils import configclass
 
-from .rough_env_cfg import AnymalCRoughEnvCfg
+from .rough_env_cfg import AnymalDRoughEnvCfg
 
 
 @configclass
-class AnymalCFlatEnvCfg(AnymalCRoughEnvCfg):
+class AnymalDFlatEnvCfg(AnymalDRoughEnvCfg):
     def __post_init__(self):
         # post init of parent
         super().__post_init__()
 
-        self.scene.num_envs = 64
         # override rewards
         self.rewards.flat_orientation_l2.weight = -5.0
         self.rewards.dof_torques_l2.weight = -2.5e-5
@@ -29,7 +28,7 @@ class AnymalCFlatEnvCfg(AnymalCRoughEnvCfg):
         self.curriculum.terrain_levels = None
 
 
-class AnymalCFlatEnvCfg_PLAY(AnymalCFlatEnvCfg):
+class AnymalDFlatEnvCfg_PLAY(AnymalDFlatEnvCfg):
     def __post_init__(self) -> None:
         # post init of parent
         super().__post_init__()
