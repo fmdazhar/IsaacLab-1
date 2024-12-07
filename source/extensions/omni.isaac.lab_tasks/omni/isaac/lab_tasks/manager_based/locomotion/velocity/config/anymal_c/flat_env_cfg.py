@@ -14,7 +14,7 @@ class AnymalCFlatEnvCfg(AnymalCRoughEnvCfg):
         # post init of parent
         super().__post_init__()
 
-        self.scene.num_envs = 64
+        self.scene.num_envs = 4
         # override rewards
         self.rewards.flat_orientation_l2.weight = -5.0
         self.rewards.dof_torques_l2.weight = -2.5e-5
@@ -22,9 +22,9 @@ class AnymalCFlatEnvCfg(AnymalCRoughEnvCfg):
         # change terrain to flat
         self.scene.terrain.terrain_type = "plane"
         self.scene.terrain.terrain_generator = None
-        # no height scan
-        self.scene.height_scanner = None
-        self.observations.policy.height_scan = None
+        # # no height scan
+        # self.scene.height_scanner = None
+        # self.observations.policy.height_scan = None
         # no terrain curriculum
         self.curriculum.terrain_levels = None
 

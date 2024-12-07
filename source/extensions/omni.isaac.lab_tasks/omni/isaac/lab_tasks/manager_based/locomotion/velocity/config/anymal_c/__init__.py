@@ -40,7 +40,7 @@ gym.register(
     entry_point="omni.isaac.lab.envs:ManagerBasedRLEnv",
     disable_env_checker=True,
     kwargs={
-        "env_cfg_entry_point": flat_env_cfg.AnymalCFlatEnvCfg,
+        "env_cfg_entry_point": f"{__name__}.flat_env_cfg:AnymalCFlatEnvCfg",
         "rl_games_cfg_entry_point": f"{agents.__name__}:rl_games_flat_sac_cfg.yaml",
     },
 )
@@ -50,7 +50,7 @@ gym.register(
     entry_point="omni.isaac.lab.envs:ManagerBasedRLEnv",
     disable_env_checker=True,
     kwargs={
-        "env_cfg_entry_point": flat_env_cfg.AnymalCFlatEnvCfg_PLAY,
+        "env_cfg_entry_point": f"{__name__}.flat_env_cfg.AnymalCFlatEnvCfg_PLAY",
         "rl_games_cfg_entry_point": f"{agents.__name__}:rl_games_flat_sac_cfg.yaml",
     },
 )
