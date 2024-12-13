@@ -58,8 +58,8 @@ params:
     actor_lr: 0.0001 #0.0003 #0.0005
     critic_lr: 0.0018 #0.0003 ##0.0005
     critic_tau: 0.05 #0.005
-    batch_size: 16384 #4096 #256  #4096
-    target_entropy: -12
+    batch_size: 2048 #2048 #4096 #16384 #256 #4096
+    target_entropy: None
     learnable_temperature: true
     num_seed_steps: 5
     num_warmup_steps: 100
