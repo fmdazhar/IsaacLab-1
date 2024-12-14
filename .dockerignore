@@ -1,5 +1,5 @@
 # ignore .git related folders
-.git/
+# .git/
 .github/
 .gitignore
 # ignore docs
