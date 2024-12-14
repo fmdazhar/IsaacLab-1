@@ -44,15 +44,11 @@ EXTRAS_REQUIRE = {
     "skrl": ["skrl>=1.3.0"],
     "rl-games": ["rl-games==1.6.1", "gym"],  # rl-games still needs gym :(
     "rsl-rl": ["rsl-rl@git+https://github.com/leggedrobotics/rsl_rl.git"],
-    "robomimic": [],
 }
 # Add the names with hyphens as aliases for convenience
 EXTRAS_REQUIRE["rl_games"] = EXTRAS_REQUIRE["rl-games"]
 EXTRAS_REQUIRE["rsl_rl"] = EXTRAS_REQUIRE["rsl-rl"]
 
-# Check if the platform is Linux and add the dependency
-if platform.system() == "Linux":
-    EXTRAS_REQUIRE["robomimic"].append("robomimic@git+https://github.com/ARISE-Initiative/robomimic.git")
 
 # Cumulation of all extra-requires
 EXTRAS_REQUIRE["all"] = list(itertools.chain.from_iterable(EXTRAS_REQUIRE.values()))
