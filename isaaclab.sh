@@ -118,6 +118,8 @@ install_isaaclab_extension() {
     elif [ -f "$1/pyproject.toml" ]; then
         echo -e "[INFO] Installing module from pyproject.toml: $1"
         ${python_exe} -m pip install "$1"
+    fi
+
 }
 
 # setup anaconda environment for Isaac Lab
