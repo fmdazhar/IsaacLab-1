@@ -1,12 +1,12 @@
 [submodule "source/algos/stable-baselines3"]
 	path = source/algos/stable-baselines3
-	url = https://github.com/DLR-RM/stable-baselines3.git
+	url = https://github.com/fmdazhar/stable-baselines3
 [submodule "source/algos/rl_games"]
 	path = source/algos/rl_games
 	url = https://github.com/fmdazhar/rl_games.git
 [submodule "source/algos/rsl_rl"]
 	path = source/algos/rsl_rl
-	url = https://github.com/leggedrobotics/rsl_rl.git
+	url = https://github.com/fmdazhar/rsl_rl.git
 [submodule "source/algos/skrl"]
 	path = source/algos/skrl
-	url = https://github.com/Toni-SM/skrl.git
+	url = https://github.com/fmdazhar/skrl.git

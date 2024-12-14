@@ -107,11 +107,17 @@ extract_isaacsim_exe() {
 install_isaaclab_extension() {
     # retrieve the python executable
     python_exe=$(extract_python_exe)
+    # upgrade pip
+    echo -e "[INFO] Upgrading pip to the latest version..."
+    ${python_exe} -m pip install --upgrade pip
+
     # if the directory contains setup.py then install the python module
     if [ -f "$1/setup.py" ]; then
         echo -e "\t module: $1"
         ${python_exe} -m pip install --editable $1
-    fi
+    elif [ -f "$1/pyproject.toml" ]; then
+        echo -e "[INFO] Installing module from pyproject.toml: $1"
+        ${python_exe} -m pip install "$1"
 }
 
 # setup anaconda environment for Isaac Lab
@@ -272,22 +278,8 @@ while [[ $# -gt 0 ]]; do
             # source directory
             find -L "${ISAACLAB_PATH}/source/extensions" -mindepth 1 -maxdepth 1 -type d -exec bash -c 'install_isaaclab_extension "{}"' \;
             # install the python packages for supported reinforcement learning frameworks
-            echo "[INFO] Installing extra requirements such as learning frameworks..."
-            # check if specified which rl-framework to install
-            if [ -z "$2" ]; then
-                echo "[INFO] Installing all rl-frameworks..."
-                framework_name="all"
-            elif [ "$2" = "none" ]; then
-                echo "[INFO] No rl-framework will be installed."
-                framework_name="none"
-                shift # past argument
-            else
-                echo "[INFO] Installing rl-framework: $2"
-                framework_name=$2
-                shift # past argument
-            fi
-            # install the rl-frameworks specified
-            ${python_exe} -m pip install -e ${ISAACLAB_PATH}/source/extensions/omni.isaac.lab_tasks["${framework_name}"]
+            echo "[INFO] Installing RL frameworks from '${ISAACLAB_PATH}/source/algos'..."
+            find -L "${ISAACLAB_PATH}/source/algos" -mindepth 1 -maxdepth 1 -type d -exec bash -c 'install_isaaclab_extension "{}"' \;
 
             # check if we are inside a docker container or are building a docker image
             # in that case don't setup VSCode since it asks for EULA agreement which triggers user interaction

@@ -37,35 +37,6 @@ INSTALL_REQUIRES = [
 ]
 
 PYTORCH_INDEX_URL = ["https://download.pytorch.org/whl/cu118"]
-ALGOS_DIR = os.path.join(EXTENSION_PATH, "../../algos")
-
-
-# # Extra dependencies for RL agents
-# EXTRAS_REQUIRE = {
-#     "sb3": ["stable-baselines3>=2.1"],
-#     "skrl": ["skrl>=1.3.0"],
-#     "rl-games": ["rl-games==1.6.1", "gym"],  # rl-games still needs gym :(
-#     "rsl-rl": ["rsl-rl@git+https://github.com/leggedrobotics/rsl_rl.git"],
-# }
-
-# Local paths to the RL agents
-EXTRAS_REQUIRE = {
-    "sb3": [f"{ALGOS_DIR}/stable-baselines3"],
-    "skrl": [f"{ALGOS_DIR}/skrl"],
-    "rl_games": [f"{ALGOS_DIR}/rl_games"],
-    "rsl_rl": [f"{ALGOS_DIR}/rsl_rl"],
-}
-
-# Add the names with hyphens as aliases for convenience
-EXTRAS_REQUIRE["rl_games"] = EXTRAS_REQUIRE["rl-games"]
-EXTRAS_REQUIRE["rsl_rl"] = EXTRAS_REQUIRE["rsl-rl"]
-
-
-# Cumulation of all extra-requires
-EXTRAS_REQUIRE["all"] = list(itertools.chain.from_iterable(EXTRAS_REQUIRE.values()))
-# Remove duplicates in the all list to avoid double installations
-EXTRAS_REQUIRE["all"] = list(set(EXTRAS_REQUIRE["all"]))
-
 
 # Installation operation
 setup(
@@ -80,7 +51,6 @@ setup(
     python_requires=">=3.10",
     install_requires=INSTALL_REQUIRES,
     dependency_links=PYTORCH_INDEX_URL,
-    extras_require=EXTRAS_REQUIRE,
     packages=["omni.isaac.lab_tasks"],
     classifiers=[
         "Natural Language :: English",
