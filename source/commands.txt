@@ -1,0 +1,38 @@
+
+# execute from the root directory of the repository
+./isaaclab.sh -p -m tensorboard.main --logdir=logs
+
+
+RL_GAMES
+
+TRAIN
+Headless Commands
+./isaaclab.sh -p source/standalone/workflows/rl_games/train.py --task Isaac-Velocity-Flat-Unitree-A1-PPO-Custom-v0 --headless
+./isaaclab.sh -p source/standalone/workflows/rl_games/train.py --task Isaac-Velocity-Flat-Unitree-A1-Play-PPO-Custom-v0 --headless
+./isaaclab.sh -p source/standalone/workflows/rl_games/train.py --task Isaac-Velocity-Flat-Unitree-A1-SAC-Custom-v0 --headless
+./isaaclab.sh -p source/standalone/workflows/rl_games/train.py --task Isaac-Velocity-Flat-Unitree-A1-Play-SAC-Custom-v0 --headless
+./isaaclab.sh -p source/standalone/workflows/rl_games/train.py --task Isaac-Velocity-Rough-Unitree-A1-PPO-custom-v0 --headless
+./isaaclab.sh -p source/standalone/workflows/rl_games/train.py --task Isaac-Velocity-Rough-Unitree-A1-Play-PPO-custom-v0 --headless
+./isaaclab.sh -p source/standalone/workflows/rl_games/train.py --task Isaac-Velocity-Rough-Unitree-A1-SAC-custom-v0 --headless
+./isaaclab.sh -p source/standalone/workflows/rl_games/train.py --task Isaac-Velocity-Rough-Unitree-A1-Play-SAC-custom-v0 --headless
+
+
+With GUI Commands
+./isaaclab.sh -p source/standalone/workflows/rl_games/train.py --task Isaac-Velocity-Flat-Unitree-A1-PPO-Custom-v0
+./isaaclab.sh -p source/standalone/workflows/rl_games/train.py --task Isaac-Velocity-Flat-Unitree-A1-Play-PPO-Custom-v0
+./isaaclab.sh -p source/standalone/workflows/rl_games/train.py --task Isaac-Velocity-Flat-Unitree-A1-SAC-Custom-v0
+./isaaclab.sh -p source/standalone/workflows/rl_games/train.py --task Isaac-Velocity-Flat-Unitree-A1-Play-SAC-Custom-v0
+./isaaclab.sh -p source/standalone/workflows/rl_games/train.py --task Isaac-Velocity-Rough-Unitree-A1-PPO-custom-v0
+./isaaclab.sh -p source/standalone/workflows/rl_games/train.py --task Isaac-Velocity-Rough-Unitree-A1-Play-PPO-custom-v0
+./isaaclab.sh -p source/standalone/workflows/rl_games/train.py --task Isaac-Velocity-Rough-Unitree-A1-SAC-custom-v0
+./isaaclab.sh -p source/standalone/workflows/rl_games/train.py --task Isaac-Velocity-Rough-Unitree-A1-Play-SAC-custom-v0
+
+PLAY
+./isaaclab.sh -p source/standalone/workflows/rl_games/play.py --task Isaac-Velocity-Flat-Unitree-A1-PPO-Custom-v0
+./isaaclab.sh -p source/standalone/workflows/rl_games/play.py --task Isaac-Velocity-Flat-Unitree-A1-Play-PPO-Custom-v0
+./isaaclab.sh -p source/standalone/workflows/rl_games/play.py --task Isaac-Velocity-Flat-Unitree-A1-SAC-Custom-v0
+./isaaclab.sh -p source/standalone/workflows/rl_games/play.py --task Isaac-Velocity-Flat-Unitree-A1-Play-SAC-Custom-v0
+./isaaclab.sh -p source/standalone/workflows/rl_games/play.py --task Isaac-Velocity-Rough-Unitree-A1-PPO-custom-v0
+./isaaclab.sh -p source/standalone/workflows/rl_games/play.py --task Isaac-Velocity-Rough-Unitree-A1-Play-PPO-custom-v0
+./isaaclab.sh -p source/standalone/workflows/rl_games/play.py --task Isaac-Velocity-Rough-Unitree-A1-SAC-custom-v0
+./isaaclab.sh -p source/standalone/workflows/rl_games/play.py --task Isaac-Velocity-Rough-Unitree-A1-Play-SAC-custom-v0
